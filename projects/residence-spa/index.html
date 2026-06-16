@@ -3,12 +3,64 @@
 <head>
 <meta charset="UTF-8">
 <title>Резиденция SPA</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f5f5f5;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    margin:0;
+}
+
+.box{
+    background:white;
+    padding:40px;
+    border-radius:12px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,.1);
+}
+
+input{
+    padding:12px;
+    width:250px;
+    margin-top:15px;
+}
+
+button{
+    padding:12px 20px;
+    margin-top:15px;
+    cursor:pointer;
+}
+</style>
 </head>
+
 <body>
 
+<div class="box">
 <h1>PRIVATE RESIDENCE & SPA</h1>
+<p>Введите пароль для просмотра проекта</p>
 
-<p>Архитектурная концепция частного дома с SPA-комплексом.</p>
+<input type="password" id="pass" placeholder="Пароль">
+
+<br>
+
+<button onclick="checkPass()">Войти</button>
+</div>
+
+<script>
+function checkPass(){
+    var p = document.getElementById("pass").value;
+
+    if(p === "12345"){
+        window.location.href = "presentation.html";
+    }else{
+        alert("Неверный пароль");
+    }
+}
+</script>
 
 </body>
 </html>
